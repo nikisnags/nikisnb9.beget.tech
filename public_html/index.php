@@ -39,14 +39,14 @@
             </div>
             <form method="POST" action="send.php" class='main__form'>
                 <div class="main__input-group">
-                    <input class="main__input" name="text" type="text" placeholder="Написать сообщение" required/>
+                    <input class="main__input" name="text" type="text" placeholder="Написать сообщение" required  autocomplete="off"/>
                     <button class="button__submit" type="submit">
                         <img src="assets/imgs/arrow.svg" alt="sumbit">
                     </button>
                 </div>
             </form>      
             <?
-                echo "<p class='main__count'>Количество записей:".$count."</p>";
+                echo "<p class='main__count'>Количество записей: ".$count."</p>";
                 exit();
             ?>
             
