@@ -12,7 +12,7 @@
     $row2 = $result2->fetch_row();
     $count = $row2[0];
     
-    $to = "niki.snags2001@gmail.com";
+    $to = "rodionova@uniweb.ru";
     $subject = " Cчётчик строк БД";
     
     $headers[] = 'MIME-Version: 1.0';

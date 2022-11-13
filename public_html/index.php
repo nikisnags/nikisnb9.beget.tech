@@ -8,7 +8,7 @@
     <body>
         <main>
             <figure class='main__bg'>
-                <img src="assets/imgs/back.png" alt="">
+                <img src="assets/imgs/back.png" alt="bg">
             </figure>
             <div class="main__chat">
                 <?php
@@ -19,15 +19,11 @@
                     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                     $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name); 
                     $mysqli->set_charset("utf8mb4"); 
-
                     $result = $mysqli->query("SELECT * FROM `table1` ORDER BY id DESC"); 
-                    
                     $result2 = $mysqli->query("SELECT count(*) FROM table1");
                     $row2 = $result2->fetch_row();
                     $count = $row2[0];
-                    
                     $i = $count;
-                    
                     $result3 = $mysqli->query("SELECT time1 FROM table1 ORDER BY id DESC LIMIT 1");
                     $time1 = $result3->fetch_row();
                     $old = $time1[0];
@@ -52,7 +48,6 @@
                         $i = $i - 1;
                     }
                 ?>  
-
             </div>
             <form method="POST" action="send.php" class='main__form'>
                 <div class="main__input-group">
@@ -66,7 +61,6 @@
                 echo "<p class='main__count'>Количество записей: ".$count."</p>";
                 exit();
             ?>
-            
         </main>  
     </body>
 </html
