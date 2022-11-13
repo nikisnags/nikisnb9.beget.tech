@@ -120,6 +120,15 @@ main {
   padding: 1.2rem 2rem;
 }
 
+.main__date {
+  align-self: center;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 3.2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  background: rgba(74, 74, 74, 0.6);
+}
+
 .main__chat::-webkit-scrollbar {
   width: 1.4rem;
 }

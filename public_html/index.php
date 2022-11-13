@@ -28,18 +28,35 @@
                     
                     $i = $count;
                     
+                    $result3 = $mysqli->query("SELECT time1 FROM table1 ORDER BY id DESC LIMIT 1");
+                    $time1 = $result3->fetch_row();
+                    $old = $time1[0];
+                    $old1 = date("d.m.Y",strtotime($old));
+                    
                     while($row = $result->fetch_assoc())
                     {
                         $date = $row[time1];
+                        $date1 = date("d.m.Y",strtotime($date)); 
+                        
+                        if ($old1 != $date1) {
+                            echo "<p class='main__date'>".date("d.m",strtotime($old1))."</p>";
+                            $old1 = $date1;
+                        } 
+                        
                         echo "<div class='main__message'><p>".$row["text"]."</p> <span>".date("H:i",strtotime($date))."</span></div>";
-                        $i = $i - 1 ;
+                        
+                        if ($i == 1) {
+                            echo "<p class='main__date'>".date("d.m",strtotime($date))."</p>";
+                        } 
+                        
+                        $i = $i - 1;
                     }
                 ?>  
 
             </div>
             <form method="POST" action="send.php" class='main__form'>
                 <div class="main__input-group">
-                    <input class="main__input" name="text" type="text" placeholder="Написать сообщение" required  autocomplete="off"/>
+                    <input class="main__input" name="text" type="text" placeholder="Написать сообщение..." required  autocomplete="off"/>
                     <button class="button__submit" type="submit">
                         <img src="assets/imgs/arrow.svg" alt="sumbit">
                     </button>
